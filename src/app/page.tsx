@@ -105,7 +105,68 @@ export default function Home() {
         <div className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-24 relative">
           {/* Title */}
           <div className="underline decoration-[#5F9EA0] underline-offset-4">Resume</div>
+          <div className="grid grid-cols-[1fr_1fr] h-screen bg-bg_color">
 
+            <div className="flex flex-col gap-y-4">
+              <h2 className="text-2xl">Education</h2>
+              
+              <div className="flex flex-row gap-x-4 relative">
+                <div className="flex items-start">
+                  <Image src={"/graduation.svg"} alt="" width={60} height={60} />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-2xl">Monash University Malaysia</h3>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>Bachelor of Software Engineering (Honours)</p>
+                    <p>Feb 2021 - Dec 2024</p>
+                  </div>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>GPA: 3.5</p>
+                    <p>WAM: 79.1</p>
+                    <p>Higher Achiever Award</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-row gap-x-4 relative mt-16">
+                <div className="flex items-start">
+                  <Image src={"/graduation.svg"} alt="" width={60} height={60} />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-2xl">Sunway College</h3>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>Monash University Foundation Year (MUFY)</p>
+                    <p>Feb 2020 - Dec 2020</p>
+                  </div>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>Average: 91</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col gap-y-4">
+              <h2 className="text-2xl">Work Experience</h2>
+              
+              <div className="flex flex-row gap-x-4 relative">
+                <div className="flex items-start">
+                  <Image src={"/work.svg"} alt="" width={54} height={54} />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-2xl">Selangor Human Resource Development Centre (SHRDC)</h3>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>Software Engineering Internship</p>
+                    <p>Nov 2023 - Feb 2024</p>
+                  </div>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>- Client requirement analysis and negotiation.</p>
+                    <p>- Customized and tailored software solutions to the clients under supervision.</p>
+                    <p>- Integrated IoT solutions using NodeRED.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <Image 
               src={"/footer-pattern.svg"}
