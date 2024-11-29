@@ -6,7 +6,11 @@ import ImageSlider from "../components/ImageSlider";
 import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
-export default function ProjectDetails( {params} ){
+type Params = {
+    projectId: string;
+}
+
+export default function ProjectDetails( {params} : { params: Promise<Params> } ){
     const resolvedParams = React.use(params);
     const { projectId } = resolvedParams;
 

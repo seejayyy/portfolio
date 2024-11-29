@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-export default function ImageSlider({ children: images }) {
+export default function ImageSlider({ children: images }: { children: JSX.Element[] }) {
     const [currentImage, setCurrentImage] = useState(0);
 
     const prev = () => setCurrentImage(currentImage === 0 ? images.length - 1 : currentImage - 1);
