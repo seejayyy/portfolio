@@ -134,6 +134,22 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <div className="flex flex-row gap-x-4 relative mt-16">
+                <div className="flex items-start">
+                  <Image src={"/graduation.svg"} alt="" width={60} height={60} />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-2xl">Chong Hwa Independent High School</h3>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>High School</p>
+                    <p>Jan 2015 - Dec 2019</p>
+                  </div>
+                  <div className="flex flex-col text-lg italic -space-y-2">
+                    <p>SPM Result: 5A 5B</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div className="flex flex-col gap-y-4">

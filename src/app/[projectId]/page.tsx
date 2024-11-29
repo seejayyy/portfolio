@@ -22,7 +22,7 @@ export default function ProjectDetails( {params} : { params: Promise<Params> } )
         console.log(images)
         return (
             <div className="grid grid-cols-[45fr_55fr] h-screen bg-bg_color relative items-center p-16 bg-footer-pattern bg-right-bottom bg-no-repeat">
-                <Link href={"/#portfolio"} className="absolute top-4 left-4 flex flex-row gap-1 items-center"><FiArrowLeft size={24}/> <p className="text-lg">Back</p></Link>
+                <Link href={"/#portfolio"} className="absolute top-8 left-8 flex flex-row gap-1 items-center"><FiArrowLeft size={24}/> <p className="text-lg">Back</p></Link>
                 <div className="p-8">
                     <ImageSlider>
                         {images.map((image, index) => (
