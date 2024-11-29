@@ -1,0 +1,44 @@
+"use client";
+import projects from "../projectData";
+import Image from "next/image";
+import Link from "next/link";
+import ImageSlider from "../components/ImageSlider";
+import React from "react";
+import { FiArrowLeft } from "react-icons/fi";
+
+export default function ProjectDetails( {params} ){
+    const resolvedParams = React.use(params);
+    const { projectId } = resolvedParams;
+
+    const project = projects.find(project => project.id === projectId);
+    
+    if (project) {
+        const images = project.images;
+
+        console.log(images)
+        return (
+            <div className="grid grid-cols-[45fr_55fr] h-screen bg-bg_color relative items-center p-16 bg-footer-pattern bg-right-bottom bg-no-repeat">
+                <Link href={"/#portfolio"} className="absolute top-4 left-4 flex flex-row gap-1 items-center"><FiArrowLeft size={24}/> <p className="text-lg">Back</p></Link>
+                <div className="p-8">
+                    <ImageSlider>
+                        {images.map((image, index) => (
+                            <Image
+                                key={index}
+                                src={image}
+                                alt=""
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                className="h-full w-auto rounded-lg shadow-md"
+                            />
+                        ))}
+                    </ImageSlider>
+                </div>
+                <div className="flex flex-col gap-y-4 p-8">
+                    <h1 className="text-3xl">{ project.title } ({ project.type })</h1>
+                    <div className="text-lg" dangerouslySetInnerHTML={{ __html: project.content }}></div>
+                </div>
+            </div>
+        )
+    }   
+}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import projects from "./projectData";
 
 export default function Home() {
   return (
@@ -58,7 +59,7 @@ export default function Home() {
       <div className="snap-y snap-mandatory overflow-y-scroll">
 
         {/* About Me */}
-        <div className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-24 relative">
+        <div id="about" className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-24 relative bg-footer-pattern bg-right-bottom bg-no-repeat">
           {/* Title */}
           <div className="underline decoration-[#5F9EA0] underline-offset-4">About Me</div>
           {/* Content */}
@@ -90,22 +91,12 @@ export default function Home() {
               <div className="bg-[#9edbdf] w-fit px-2 rounded-md items-center justify-between">Software Development Life Cycle (SDLC)</div>
             </div>
           </div>
-
-          <Image 
-            src={"/footer-pattern.svg"}
-            alt="Footer Pattern"
-            width={1000}
-            height={1600}
-            className="absolute bottom-0 right-0 "
-          />
-
-
         </div>
 
-        <div className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-24 relative">
+        <div id="resume" className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-24 relative bg-footer-pattern bg-right-bottom bg-no-repeat">
           {/* Title */}
           <div className="underline decoration-[#5F9EA0] underline-offset-4">Resume</div>
-          <div className="grid grid-cols-[1fr_1fr] h-screen bg-bg_color">
+          <div className="grid grid-cols-[1fr_1fr] bg-bg_color">
 
             <div className="flex flex-col gap-y-4">
               <h2 className="text-2xl">Education</h2>
@@ -167,26 +158,27 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <Image 
-              src={"/footer-pattern.svg"}
-              alt="Footer Pattern"
-              width={1000}
-              height={1600}
-              className="absolute bottom-0 right-0"
-            />
         </div>
 
-        <div className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-24 relative">
+        <div id="portfolio" className="snap-start h-screen flex text-3xl flex-col pt-32 pl-32 pr-32 gap-y-12 relative bg-footer-pattern bg-right-bottom bg-no-repeat">
           <div className="underline decoration-[#5F9EA0] underline-offset-4">Past Projects</div>
-
-          <Image 
-              src={"/footer-pattern.svg"}
-              alt="Footer Pattern"
-              width={1000}
-              height={1600}
-              className="absolute bottom-0 right-0"
-            />
+          <div className="grid grid-cols-2 h-fit bg-bg_color overflow-auto gap-4 pl-8 pr-8">
+            {projects.map((project) => (
+              <div key={project.id} className="border p-4 rounded-lg shadow-md min-h-72 overflow-hidden">
+                <Link href={`/${project.id}`}>
+                  <div className="flex flex-col gap-y-4 items-center">
+                    <Image
+                      src={project.image}
+                      alt=""
+                      width={300}
+                      height={300}
+                    />
+                    <h2 className="text-center">{ project.title } ({ project.type })</h2>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
