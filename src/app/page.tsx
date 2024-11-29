@@ -67,7 +67,7 @@ export default function Home() {
               Hello!  
               <br />
               <br />
-              I am a recent software engineer graduate from Monash University Malaysia with a strong passion for software and web development. I'm a quick learner and highly adaptable, always eager to contribute to team discussions and unafraid to ask questions to deepen my understanding. I'm actively seeking opportunities in software engineering and software developer field, where I can apply my skills, continue to grow, and make a meaningful impact.
+              I am a recent software engineer graduate from Monash University Malaysia with a strong passion for software and web development. I&apos;m a quick learner and highly adaptable, always eager to contribute to team discussions and unafraid to ask questions to deepen my understanding. I&apos;m actively seeking opportunities in software engineering and software developer field, where I can apply my skills, continue to grow, and make a meaningful impact.
           </p>
           {/* Tech Stack */}
           <div className="flex flex-col gap-y-2">
