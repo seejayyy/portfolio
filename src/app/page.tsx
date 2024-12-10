@@ -9,7 +9,15 @@ export default function Home() {
       <div className="sticky top-0 h-screen border-[#b48b77] border-r-4 p-16 flex flex-col ">
         {/* Profile Picture */}
         <div className="flex flex-col items-center justify-between">
-          <div className="rounded-full bg-[#5F9EA0] w-48 h-48"></div>
+          <div className="rounded-full bg-[#5F9EA0] w-48 h-48">
+            <Image 
+              src={"/profile.jpg"}
+              alt=""
+              width={300}
+              height={300}
+              className="object-cover rounded-full"
+            />
+          </div>
           {/* Name */}
           <h2 className="text-3xl text-center pt-8">Chua Jun Jie (CJ)</h2>
         </div>
