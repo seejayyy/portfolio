@@ -19,25 +19,22 @@ export default function ProjectDetails( {params} : { params: Promise<Params> } )
     if (project) {
         const images = project.images;
 
-        console.log(images)
         return (
-            <div className="grid grid-cols-[45fr_55fr] h-screen bg-bg_color relative items-center p-16 bg-footer-pattern bg-right-bottom bg-no-repeat">
+            <div className="xl:grid xl:grid-cols-[45fr_55fr] h-screen bg-bg_color relative items-center p-16 bg-footer-pattern bg-right-bottom bg-no-repeat">
                 <Link href={"/#portfolio"} className="absolute top-8 left-8 flex flex-row gap-1 items-center"><FiArrowLeft size={24}/> <p className="text-lg">Back</p></Link>
-                <div className="p-8">
-                    <ImageSlider>
-                        {images.map((image, index) => (
-                            <Image
-                                key={index}
-                                src={image}
-                                alt=""
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                                className="h-full w-auto rounded-lg shadow-md"
-                            />
-                        ))}
-                    </ImageSlider>
-                </div>
+                <ImageSlider>
+                    {images.map((image, index) => (
+                        <Image
+                            key={index}
+                            src={image}
+                            alt=""
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="h-full w-auto rounded-lg shadow-md flex-shrink-0 object-cover"
+                        />
+                    ))}
+                </ImageSlider>
                 <div className="flex flex-col gap-y-4 p-8">
                     <h1 className="text-3xl">{ project.title } ({ project.type })</h1>
                     <div className="text-lg" dangerouslySetInnerHTML={{ __html: project.content }}></div>
