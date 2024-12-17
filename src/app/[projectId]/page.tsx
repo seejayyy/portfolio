@@ -21,7 +21,7 @@ export default function ProjectDetails( {params} : { params: Promise<Params> } )
 
         return (
             <div className="xl:grid xl:grid-cols-[45fr_55fr] h-screen bg-bg_color relative items-center p-16 bg-footer-pattern bg-right-bottom bg-no-repeat">
-                <Link href={"/#portfolio"} className="absolute top-8 left-8 flex flex-row gap-1 items-center"><FiArrowLeft size={24}/> <p className="text-lg">Back</p></Link>
+                <Link href={"/#portfolio"} className="absolute top-4 left-4 sm:top-8 sm:left-8 flex flex-row gap-1 items-center"><FiArrowLeft size={24}/> <p className="text-lg">Back</p></Link>
                 <ImageSlider>
                     {images.map((image, index) => (
                         <Image
@@ -35,9 +35,9 @@ export default function ProjectDetails( {params} : { params: Promise<Params> } )
                         />
                     ))}
                 </ImageSlider>
-                <div className="flex flex-col gap-y-4 p-8">
-                    <h1 className="text-3xl">{ project.title } ({ project.type })</h1>
-                    <div className="text-lg" dangerouslySetInnerHTML={{ __html: project.content }}></div>
+                <div className="flex flex-col gap-y-2 p-4 sm:gap-y-4 sm:p-8">
+                    <h1 className="text-lg md:text-xl">{ project.title } ({ project.type })</h1>
+                    <div className="text-sm md:text-lg" dangerouslySetInnerHTML={{ __html: project.content }}></div>
                 </div>
             </div>
         )
